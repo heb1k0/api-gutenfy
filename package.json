@@ -4,7 +4,8 @@
   "description": "api-gutenfy creada en nodejs",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "author": "Alejandro Zuriguel",
   "license": "ISC",
