@@ -14,9 +14,9 @@ const connect = async () => {
 
   try {
     await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
+    console.log("Gutenfy DB Conection.");
   } catch (error) {
-    console.error("Unable to connect to the database:", error);
+    console.error("Unable Gutenfy DB Authentication:", error);
     throw error;
   }
 }
