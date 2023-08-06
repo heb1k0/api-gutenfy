@@ -1,9 +1,9 @@
 // create all routers in api/routes folder
-const express = require('express');
-const app = express();
-const apiRouter = express.Router();
+import express from 'express'
 
-const RouterUsers = require('./users');
+const app = express()
+const apiRouter = express.Router();
+import RouterUsers from './users.js';
 
 
 apiRouter.get('/', (req, res) => {
@@ -12,4 +12,4 @@ apiRouter.get('/', (req, res) => {
 
 apiRouter.use('/users', RouterUsers);
 
-module.exports = apiRouter;
+export default apiRouter;

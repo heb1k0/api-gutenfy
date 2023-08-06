@@ -1,10 +1,9 @@
-const sequelize = require('./config/db');
-const express = require('express');
-const apiRouter = require('./routes/index');
-const dotenv = require('dotenv');
-const app = express();
-dotenv.config();
+import {sequelize} from './config/db.js';
+import express from 'express';
+import apiRouter from './routes/index.js';
+import 'dotenv/config'
 
+const app = express();
 // CONSTANTS
 const PORT = process.env.PORT || 3000;
 

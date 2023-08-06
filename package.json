@@ -1,6 +1,7 @@
 {
   "name": "api-gutenfy",
   "version": "1.0.0",
+  "type": "module",
   "description": "api-gutenfy creada en nodejs",
   "main": "src/app.js",
   "scripts": {

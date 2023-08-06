@@ -1,4 +1,4 @@
-const { Users } = require('../models/Users.js');
+import {Users} from '../models/Users.js';
 
 
 async function getUsers(req, res) {
@@ -59,10 +59,4 @@ async function deleteUser(req, res) {
         }
 }
 
-module.exports = {
-    getUsers,
-    getUser,
-    createUser,
-    updateUser,
-    deleteUser
-}
+export { getUsers, getUser, createUser, updateUser, deleteUser };

@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-function requireLogin(req, res, next) {
+export function requireLogin(req, res, next) {
 
     const token = req.headers.authorization;
   
@@ -18,5 +18,3 @@ function requireLogin(req, res, next) {
       return res.status(401).json({ message: 'Token no proporcionado' });
     }
   }
-
-module.exports = {requireLogin};
