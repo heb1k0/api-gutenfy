@@ -1,6 +1,6 @@
 // Path: src\models\ScheduleHours.js
-const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize');
 
 const ScheduleHours = sequelize.define('ScheduleHours', {
     id: {

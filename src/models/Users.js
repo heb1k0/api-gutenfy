@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize');
 
-const User = sequelize.define('User', {
+const Users = sequelize.define('users', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -46,4 +46,12 @@ const User = sequelize.define('User', {
     timestamps: true,
 });
 
-module.exports = User;
+// sequelize.sync().then(() => {
+//     console.log('Book table created successfully!');
+// }).catch((error) => {
+//     console.error('Unable to create table : ', error);
+// });
+ 
+module.exports = {
+    Users
+};

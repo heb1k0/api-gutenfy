@@ -1,12 +1,15 @@
-const { Users } = require('../models');
+const { Users } = require('../models/Users.js');
 
 
 async function getUsers(req, res) {
     try {
-        const users = await Users.findAll();
-        res.json(users);
+        const All = await Users.findAll();
+        if(All.length === 0){
+            res.status(404).json({ message: 'No hay usuarios' });
+        }else{
+            res.json(All);
+        }
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Server Error' });
     }
 }

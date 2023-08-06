@@ -3,8 +3,13 @@ const express = require('express');
 const app = express();
 const apiRouter = express.Router();
 
+const RouterUsers = require('./users');
+
+
 apiRouter.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.json({ message: 'Gutenfy Api v0.1' });
 });
+
+apiRouter.use('/users', RouterUsers);
 
 module.exports = apiRouter;

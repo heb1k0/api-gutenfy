@@ -7,14 +7,18 @@ const RouterUsers = express.Router();
 const { getUsers, getUser, createUser, updateUser, deleteUser } = require('../controllers/users');
 
 RouterUsers.get('/',getUsers);
-
-RouterUsers.get('/:id',getUser);
-
 RouterUsers.post('/',createUser);
 
-RouterUsers.put('/:id',updateUser);
 
 
-RouterUsers.delete('/:id',deleteUser);
+// Routas protegidas
+
+
+const { requireLogin } = require('../middlewares/users');
+
+
+// RouterUsers.get('/:id',requireLogin, getUser);
+// RouterUsers.put('/:id', requireLogin,updateUser);
+// RouterUsers.delete('/:id', requireLogin ,deleteUser);
 
 module.exports = RouterUsers;

@@ -1,6 +1,6 @@
 // Path: src\models\StoreFinishesOptions.js
-const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize');
 
 const StoreFinishesOptions = sequelize.define('StoreFinishesOptions', {
     id: {

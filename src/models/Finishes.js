@@ -1,6 +1,6 @@
 // Path: src\models\Finishes.js
-const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize');
 
 const Finishes = sequelize.define('Finishes', {
     id: {
