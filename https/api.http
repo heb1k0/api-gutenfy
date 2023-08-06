@@ -1,0 +1,9 @@
+# SIMPLE GET API USERS
+GET http://localhost:2000/users
+
+#### SIMPLE POST API USERS
+POST http://localhost:2000/users
+
+### SIMPLE GET SEARCH USER
+
+GET http://127.0.0.1:2000/users/John/

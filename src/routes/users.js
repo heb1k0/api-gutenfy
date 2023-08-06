@@ -9,16 +9,15 @@ const { getUsers, getUser, createUser, updateUser, deleteUser } = require('../co
 RouterUsers.get('/',getUsers);
 RouterUsers.post('/',createUser);
 
-
-
 // Routas protegidas
-
 
 const { requireLogin } = require('../middlewares/users');
 
+RouterUsers.use(requireLogin);
+RouterUsers.get('/:id',getUser);
+RouterUsers.put('/:id',updateUser);
+RouterUsers.delete('/:id',deleteUser);
 
-// RouterUsers.get('/:id',requireLogin, getUser);
-// RouterUsers.put('/:id', requireLogin,updateUser);
-// RouterUsers.delete('/:id', requireLogin ,deleteUser);
+
 
 module.exports = RouterUsers;

@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 function requireLogin(req, res, next) {
+
     const token = req.headers.authorization;
   
     if (token) {
@@ -18,4 +19,4 @@ function requireLogin(req, res, next) {
     }
   }
 
-module.exports = requireLogin;
+module.exports = {requireLogin};
