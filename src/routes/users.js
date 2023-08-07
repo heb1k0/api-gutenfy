@@ -10,9 +10,9 @@ RouterUsers.post('/',createUser);
 
 // Routas protegidas
 
-import { requireLogin } from '../middlewares/users.js'
+import { Auth } from '../middlewares/Auth.js'
 
-RouterUsers.use(requireLogin);
+RouterUsers.use(Auth);
 RouterUsers.get('/:id',getUser);
 RouterUsers.put('/:id',updateUser);
 RouterUsers.delete('/:id',deleteUser);

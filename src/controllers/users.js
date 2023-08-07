@@ -1,4 +1,5 @@
 import {Users} from '../models/Users.js';
+import { createErrorMessage } from '../utils/errors.js';
 
 
 async function getUsers(req, res) {
@@ -10,18 +11,19 @@ async function getUsers(req, res) {
             res.json(All);
         }
     } catch (error) {
-        res.status(500).json({ message: 'Server Error' });
+        res.status(500).json({ message: error });
     }
 }
 
 
 async function getUser(req, res) {
 
+    // console.log("Lleg token? ",req.token)
+
         try {
             const user = await Users.findOne({ where: { id: req.params.id } });
             res.json(user);
-        } catch (error) {
-            console.error(error);
+        } catch (error) {;
             res.status(500).json({ message: 'Server Error' });
         }
 }
@@ -32,8 +34,7 @@ async function createUser(req, res) {
             const user = await Users.create(req.body);
             res.json(user);
         } catch (error) {
-            console.error(error);
-            res.status(500).json({ message: 'Server Error' });
+            createErrorMessage(error, res);
         }
 }
 
@@ -43,8 +44,7 @@ async function updateUser(req, res) {
             const user = await Users.update(req.body, { where: { id: req.params.id } });
             res.json(user);
         } catch (error) {
-            console.error(error);
-            res.status(500).json({ message: 'Server Error' });
+            createErrorMessage(error, res);
         }
 }
 

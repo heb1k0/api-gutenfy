@@ -4,6 +4,7 @@ import express from 'express'
 const app = express()
 const apiRouter = express.Router();
 import RouterUsers from './users.js';
+import RouterLogin from './login.js';
 
 
 apiRouter.get('/', (req, res) => {
@@ -11,5 +12,7 @@ apiRouter.get('/', (req, res) => {
 });
 
 apiRouter.use('/users', RouterUsers);
+apiRouter.use('/login', RouterLogin);
+
 
 export default apiRouter;

@@ -4,6 +4,23 @@ GET http://localhost:2000/users
 #### SIMPLE POST API USERS
 POST http://localhost:2000/users
 
-### SIMPLE GET SEARCH USER
+### SIMPLE GET SEARCH USER AND HEADER AUTHORIZATION
 
 GET http://127.0.0.1:2000/users/John/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjVlZjY2ZjQ3ZjY2ZjQ3ZjY2ZjQ3ZjY2ZiIsIm5hbWUiOiJqb2huIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTU5MjY0NjQ0NSwiZXhwIj;
+
+
+### POST LOGIN API
+
+POST http://localhost:2000/login
+Accept: application/json
+Content-Type: application/json
+Content-Length: 81
+
+{
+  "username": "John",
+"password": "123456"
+}
+
+
+
